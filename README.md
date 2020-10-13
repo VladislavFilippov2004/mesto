@@ -4,5 +4,5 @@
 
 Этот учебный проект - интерактивная страница. В проекте мы применяли знания, полученные во время прохождения 4-ого и 3-ого спринтов: Javascript, грид, адаптивность.
 
-* [Ссылка на проект:](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
+* [Ссылка на проект:](https://vladislavfilippov2004.github.io/mesto/)
 
