@@ -1,0 +1,13 @@
+.elements__under-picture {
+    display: flex;
+    flex-direction: row;
+    width: 100%; 
+    box-sizing: border-box;
+    padding-left: 21px;
+    padding-right: 15px;
+    /* padding: 25px 15px 31px 21px; */
+    /* align-items: baseline; */
+    /* border-bottom-right-radius: 10%;
+    border-bottom-left-radius: 10%; */
+    /* background-color: white; */
+}

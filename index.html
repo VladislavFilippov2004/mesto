@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+
+<body class="root">
+    <header class="header">
+        <div class="header__logo">
+            <img class="header__logo" src="images/logo.png" alt="Плохое соединение с интернетом">
+        </div>
+    </header>
+    <main>
+        <div class="profile">
+            <img class="profile__avatar" src="images/user-avatar.jpg" alt="Фотография Жак-Ив Кусо">
+            <div class="profile__info">
+                <div class="profile__text">
+                    <div class="profile__top-line">
+                        <p class="profile__name">Жак-Ив Кусто</p>
+                        <img class="profile__image" src="images/Button-Edit.svg" alt="Кнопка редактирования">
+                    </div>
+                    <p class="profile__job">Исследователь океана</p>
+                </div>
+            </div>
+            <button class="profile__Add-Button">+</button>
+        </div>
+
+        <div class="popup">
+
+            <form class="form">
+
+                <h3 class="form__title">Редактировать профиль</h3>
+                <fieldset class="form__info">
+                    <input type="text" class="form__input-field" id="nameInput">
+                    <input type="text" class="form__input-field" id="jobInput">
+                </fieldset>
+
+                <img class="form__icon-close" src="images/Icon-Close.png" alt="Кнопка закрыть">
+                <button type="submit" class="form__button-save">
+                    Сохранить
+                </button>
+            </form>
+
+        </div>
+
+        <section class="elements">
+            <div class="elements__item">
+                <img class="elements__item_image" src="images/Karachaevsk.jpg" alt="Карачаевск">
+                <div class="elements__under-picture">
+                    <p class="elements__text">Карачаевск</p>
+                    <img class="elements__under-picture_like" src="images/Icon-Like.svg" alt="Like">
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__item_image" src="images/Elsbrus.png" alt="Фото Эльбруса">
+                <div class="elements__under-picture">
+                    <p class="elements__text">Гора Эльбрус</p>
+                    <img class="elements__under-picture_like" src="images/Icon-Like.svg" alt="Like">
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__item_image" src="images/Dombai.png" alt="Домбай">
+                <div class="elements__under-picture">
+                    <p class="elements__text">Домбай</p>
+                    <img class="elements__under-picture_like" src="images/Icon-Like.svg" alt="Like">
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__item_image" src="images/Elbrus 2.png" alt="Фото Эльбруса">
+                <div class="elements__under-picture">
+                    <p class="elements__text">Гора Эльбрус</p>
+                    <img class="elements__under-picture_like" src="images/Icon-Like.svg" alt="Like">
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__item_image" src="images/Dombai.png" alt="Домбай">
+                <div class="elements__under-picture">
+                    <p class="elements__text">Домбай</p>
+                    <img class="elements__under-picture_like" src="images/Icon-Like.svg" alt="Like">
+                </div>
+            </div>
+            <div class="elements__item">
+                <img class="elements__item_image" src="images/Karachaevsk.jpg" alt="Карачаевск">
+                <div class="elements__under-picture">
+                    <p class="elements__text">Карачаево-Черкессия</p>
+                    <img class="elements__under-picture_like" src="images/Icon-Like.svg" alt="Like">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="footer__text"> &COPY; 2020 Mesto Russia</p>
+    </footer>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

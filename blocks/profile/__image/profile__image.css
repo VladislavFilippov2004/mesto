@@ -1,0 +1,9 @@
+.profile__image {
+    width: 24px;
+    height: 24px;
+}
+
+.profile__image:hover {
+    opacity: 0.3;
+    transition: opacity 1s;
+}
