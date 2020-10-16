@@ -11,5 +11,6 @@
     .profile__job {
          margin: 14px auto 0; 
          font-size: 14px;
+         font-weight: 400;
      } 
  }  

@@ -1,4 +1,4 @@
-.elements__under-picture_like{
+.elements__like{
     display: flex;
     margin-left: auto;
     align-items: center;
@@ -8,7 +8,7 @@
     background-color: white;
 }
 
-.elements__under-picture_like:hover {
+.elements__like:hover {
     opacity: 0.3;
     transition: opacity 1s;
 }

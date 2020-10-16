@@ -1,4 +1,4 @@
-.popup__form_button-save {
+.popup__button-save {
     /* display: flex; */
     height: 50px;
     font-size: 18px;
@@ -8,16 +8,17 @@
     color: white;
     outline: none;
     border: none;
+    margin-bottom: 37px;
 }
 
-.popup__form_button-save:hover {
+.popup__button-save:hover {
     opacity: 0.3;
     transition: opacity 1s;
 }
 
 @media screen and (max-width:768px) {
-   .popup__form_button-save{ 
+   .popup__button-save{ 
        height: 46px;
-       /* margin-bottom: 25px; */
+       margin-bottom: 25px;
    }
 }

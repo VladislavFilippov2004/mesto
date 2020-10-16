@@ -19,29 +19,31 @@
                 <div class="profile__text">
                     <div class="profile__top-line">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button class="profile__edit-button" type="type">
-                            <img src="images/Button-Edit.svg" alt="Кнопка редактирования">
+                        <button class="profile__edit-button" type="button">
+                            <img src="images/button-edit.svg" alt="Кнопка редактирования">
                         </button>
                     </div>
                     <p class="profile__job">Исследователь океана</p>
                 </div>
             </div>
-            <button class="profile__button-add">+</button>
+            <button class="profile__button-add" type="button">
+                <img src="images/add-button.svg" class="profile__button-add-image">
+            </button>
         </div>
 
         <div class="popup">
 
-            <form class="popup__form">
+            <form class="popup__form" method="GET" name="submit-form-btn">
 
-                <h3 class="popup__form_title">Редактировать профиль</h3>
-                <fieldset class="popup__form_info">
-                    <input type="text" class="popup__form_input-name" id="nameInput">
-                    <input type="text" class="popup__form_input-job" id="jobInput">
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <fieldset class="popup__info">
+                    <input type="text" class="popup__input-name" id="nameInput">
+                    <input type="text" class="popup__input-job" id="jobInput">
                 </fieldset>
-                <button class="popup__form_icon-close">
+                <button class="popup__icon-close" type="reset">
                     <img src="images/close_icon.svg" alt="Кнопка закрыть">
                 </button>
-                <button type="submit" class="popup__form_button-save">
+                <button type="submit" class="popup__button-save" name="submit-form-btn">
                     Сохранить
                 </button>
             </form>
@@ -50,56 +52,56 @@
 
         <section class="elements">
             <div class="elements__item">
-                <img class="elements__item_image" src="../mesto/images/Karachaevsk.jpg" alt="Карачаевск">
+                <img class="elements__image" src="images/karachaevsk.jpg" alt="Карачаевск">
                 <div class="elements__under-picture">
                     <h4 class="elements__text">Карачаевск</h4>
-                    <button class="elements__under-picture_like">
-                        <img src="./images/icon_like.svg" alt="Like">
+                    <button class="elements__like" type="button">
+                        <img src="images/icon_like.svg" alt="Лайк">
                     </button>
                 </div>
             </div>
             <div class="elements__item">
-                <img class="elements__item_image" src="../mesto/images/Elsbrus.png" alt="Фото Эльбруса">
+                <img class="elements__image" src="images/elbrus.png" alt="Фото Эльбруса">
                 <div class="elements__under-picture">
                     <h4 class="elements__text">Гора Эльбрус</h4>
-                    <button class="elements__under-picture_like">
-                        <img src="./images/icon_like.svg" alt="Like">
+                    <button class="elements__like">
+                        <img src="images/icon_like.svg" alt="Лайк">
                     </button>
                 </div>
             </div>
             <div class="elements__item">
-                <img class="elements__item_image" src="../mesto/images/Dombai.png" alt="Домбай">
+                <img class="elements__image" src="images/dombai.png" alt="Домбай">
                 <div class="elements__under-picture">
                     <h4 class="elements__text">Домбай</h4>
-                    <button class="elements__under-picture_like">
-                        <img src="./images/icon_like.svg" alt="Like">
+                    <button class="elements__like" type="button">
+                        <img src="images/icon_like.svg" alt="Лайк">
                     </button>
                 </div>
             </div>
             <div class="elements__item">
-                <img class="elements__item_image" src="images/Elbrus2.png" alt="Фото Эльбруса">
+                <img class="elements__image" src="images/Elbrus2.png" alt="Фото Эльбруса">
                 <div class="elements__under-picture">
                     <h4 class="elements__text">Гора Эльбрус</h4>
-                    <button class="elements__under-picture_like">
-                    <img src="./images/icon_like.svg" alt="Like">
+                    <button class="elements__like" type="button">
+                    <img src="images/icon_like.svg" alt="Лайк">
                     </button>
                 </div>
             </div>
             <div class="elements__item">
-                <img class="elements__item_image" src="images/Dombai.png" alt="Домбай">
+                <img class="elements__image" src="images/Dombai.png" alt="Домбай">
                 <div class="elements__under-picture">
                     <h4 class="elements__text">Домбай</h4>
-                    <button class="elements__under-picture_like">
-                    <img  src="./images/icon_like.svg" alt="Like">
+                    <button class="elements__like">
+                    <img  src="images/icon_like.svg" alt="Лайк" type="button">
                     </button>
                 </div>
             </div>
             <div class="elements__item">
-                <img class="elements__item_image" src="images/Karachaevsk.jpg" alt="Карачаевск">
+                <img class="elements__image" src="images/Karachaevsk.jpg" alt="Карачаевск">
                 <div class="elements__under-picture">
                     <h4 class="elements__text">Карачаево-Черкессия</h4>
-                    <button class="elements__under-picture_like">
-                    <img  src="./images/icon_like.svg" alt="Like">
+                    <button class="elements__like">
+                    <img  src="images/icon_like.svg" alt="Лайк" type="button">
                     </button>
                 </div>
             </div>
