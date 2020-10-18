@@ -11,7 +11,5 @@
     .profile {
         flex-direction: column;
         margin-top: 0;
-        /* align-items: stretch; */
-
     }
 }

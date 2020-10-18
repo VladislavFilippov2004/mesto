@@ -1,5 +1,4 @@
 .popup__button-save {
-    /* display: flex; */
     height: 50px;
     font-size: 18px;
     align-items: center;
@@ -12,7 +11,7 @@
 }
 
 .popup__button-save:hover {
-    opacity: 0.3;
+    opacity: 0.8;
     transition: opacity 1s;
 }
 
