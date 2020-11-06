@@ -42,7 +42,7 @@ const photoItems = document.querySelectorAll('.elements__image');
 const popupPlaces = document.querySelector('.popup-new-place');
 const placeInput = document.querySelector('.popup__input_place');
 const linkInput = document.querySelector('.popup__input_link');
-const popupPhoto = document.querySelector('.popup__photo');
+const popupPhoto = document.querySelector('.popup_photo');
 
 for (let i = 0; i < initialCards.length; i++) {
 addCard(initialCards[i].name, initialCards[i].link);
