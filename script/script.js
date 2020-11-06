@@ -25,27 +25,24 @@ const initialCards = [
     }
 ];
 
-let editButton = document.querySelector('.profile__edit-button');
-let popupUserInfo = document.querySelector('.popup-user-info');
-let closeButton = document.querySelectorAll('.popup__icon-close');
-let formElement = document.querySelector('.popup__form_user-info');
-let formNewPlace = document.querySelector('.popup__form_new-place');
-let nameInput = document.querySelector('.popup__input_name');
-let jobInput = document.querySelector('.popup__input_job');
-let profileTitle = document.querySelector('.profile__name');
-let profileSubtitle = document.querySelector('.profile__job');
-let plusButton = document.querySelector('.profile__button-add');
-let whiteLike = document.querySelectorAll('.elements__like-picture');
-let deleteButton = document.querySelectorAll('.elements__trash');
-let elementItem = document.querySelectorAll('.elements__item');
-let photoItem = document.querySelectorAll('.elements__image');
-let popupPlaces = document.querySelector('.popup-new-place');
-let placeInput = document.querySelector('.popup__input_place');
-let linkInput = document.querySelector('.popup__input_link');
-let popupPhoto = document.querySelector('.popup__photo');
-
-// console.log(photoItem);
-// console.log('.popup_opened')
+const editButton = document.querySelector('.profile__edit-button');
+const popupUserInfo = document.querySelector('.popup-user-info');
+const closeButtons = document.querySelectorAll('.popup__icon-close');
+const formElement = document.querySelector('.popup__form_user-info');
+const formNewPlace = document.querySelector('.popup__form_new-place');
+const nameInput = document.querySelector('.popup__input_name');
+const jobInput = document.querySelector('.popup__input_job');
+const profileTitle = document.querySelector('.profile__name');
+const profileSubtitle = document.querySelector('.profile__job');
+const plusButton = document.querySelector('.profile__button-add');
+const whiteLikes = document.querySelectorAll('.elements__like-picture');
+const deleteButtons = document.querySelectorAll('.elements__trash');
+const elementItems = document.querySelectorAll('.elements__item');
+const photoItems = document.querySelectorAll('.elements__image');
+const popupPlaces = document.querySelector('.popup-new-place');
+const placeInput = document.querySelector('.popup__input_place');
+const linkInput = document.querySelector('.popup__input_link');
+const popupPhoto = document.querySelector('.popup__photo');
 
 for (let i = 0; i < initialCards.length; i++) {
 addCard(initialCards[i].name, initialCards[i].link);
@@ -78,7 +75,6 @@ function openPopupUser() {
 }
 
 function closePopup(evt) {
-    console.log(evt.target);
     evt.target.closest('.popup').classList.remove('popup_opened');
 }
 
@@ -115,17 +111,14 @@ function likeHandler(evt) {
 
  function showPopupPhoto(evt) {
     openPopup(popupPhoto);
-    console.log(evt.target);
     document.querySelector('.popup__image').src = evt.target.src;
     document.querySelector('.popup__text').textContent = evt.target.closest('.elements__item').querySelector('.elements__text').textContent;
-    console.log(evt.target.closest('.elements__item'));
- 
  }
 
-addListener (whiteLike, likeHandler);
-addListener (deleteButton, deleteItem);
-addListener (photoItem, showPopupPhoto);
-addListener (closeButton, closePopup);
+addListener (whiteLikes, likeHandler);
+addListener (deleteButtons, deleteItem);
+addListener (photoItems, showPopupPhoto);
+addListener (closeButtons, closePopup);
 editButton.addEventListener("click", openPopupUser);
 formElement.addEventListener('submit', formSubmitHandler);
 plusButton.addEventListener("click", () => openPopup(popupPlaces));
