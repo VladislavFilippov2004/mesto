@@ -47,9 +47,9 @@ const itemTemplateContent = document.querySelector('#item-template').content;
 const popupImage = document.querySelector('.popup__image');
 const popupText = document.querySelector('.popup__text');
 
-for (let i = 0; i < initialCards.length; i++) {
-    addCard(initialCards[i].name, initialCards[i].link);
-}
+initialCards.forEach(function (item) {
+    addCard(item.name, item.link);
+});
 
 function addCard(name, link) {
     const itemClone = itemTemplateContent.cloneNode(true);
@@ -114,16 +114,10 @@ function showPopupPhoto(evt) {
     popupText.textContent = evt.target.closest('.elements__item').querySelector('.elements__text').textContent;
 }
 
-function addListener(array, functionToAdd) {
-    for (let i = 0; i < array.length; i++) {
-        array[i].addEventListener('click', functionToAdd);
-    }
-}
+closeButtons.forEach(function (item) {
+    item.addEventListener('click', passPopup);
+});
 
-addListener(whiteLikes, likeHandler);
-addListener(deleteButtons, deleteItem);
-addListener(photoItems, showPopupPhoto);
-addListener(closeButtons, passPopup);
 editButton.addEventListener("click", openPopupUser);
 formUserInfo.addEventListener('submit', userFormSubmitHandler);
 plusButton.addEventListener("click", () => openPopup(popupPlaces));
