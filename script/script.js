@@ -28,7 +28,7 @@ const initialCards = [
 const editButton = document.querySelector('.profile__edit-button');
 const popupUserInfo = document.querySelector('.popup-user-info');
 const closeButtons = document.querySelectorAll('.popup__icon-close');
-const formElement = document.querySelector('.popup__form_user-info');
+const formUserInfo = document.querySelector('.popup__form_user-info');
 const formNewPlace = document.querySelector('.popup__form_new-place');
 const nameInput = document.querySelector('.popup__input_name');
 const jobInput = document.querySelector('.popup__input_job');
@@ -43,13 +43,15 @@ const popupPlaces = document.querySelector('.popup-new-place');
 const placeInput = document.querySelector('.popup__input_place');
 const linkInput = document.querySelector('.popup__input_link');
 const popupPhoto = document.querySelector('.popup_photo');
+const itemTemplateContent = document.querySelector('#item-template').content;
+const popupImage = document.querySelector('.popup__image');
+const popupText = document.querySelector('.popup__text');
 
 for (let i = 0; i < initialCards.length; i++) {
-addCard(initialCards[i].name, initialCards[i].link);
+    addCard(initialCards[i].name, initialCards[i].link);
 }
 
-function addCard (name, link) {
-    const itemTemplateContent = document.querySelector('#item-template').content;
+function addCard(name, link) {
     const itemClone = itemTemplateContent.cloneNode(true);
     itemClone.querySelector('.elements__image').src = link;
     itemClone.querySelector('.elements__text').textContent = name;
@@ -59,13 +61,8 @@ function addCard (name, link) {
     document.querySelector('.elements').append(itemClone);
 }
 
-function addListener (array, functionToAdd) {
-    for (let i = 0; i < array.length; i++) {
-        array[i].addEventListener('click', functionToAdd);
-    }
-}
-function openPopup(argument) {
-    argument.classList.add('popup_opened');
+function openPopup(popup) {
+    popup.classList.add('popup_opened');
 }
 
 function openPopupUser() {
@@ -74,29 +71,31 @@ function openPopupUser() {
     openPopup(popupUserInfo);
 }
 
-function closePopup(evt) {
-    evt.target.closest('.popup').classList.remove('popup_opened');
+function closePopup(popup) {
+    popup.classList.remove('popup_opened');
 }
 
-function formSubmitHandler(evt) {
+function passPopup(evt) {
+    closePopup(evt.target.closest('.popup'));
+}
+
+function userFormSubmitHandler(evt) {
     evt.preventDefault();
     profileTitle.textContent = nameInput.value;
     profileSubtitle.textContent = jobInput.value;
-    closePopup(evt);
-    
+    closePopup(formUserInfo.closest('.popup'));
 }
 
-function placeSubmitHandler(evt) {
+function placeFormSubmitHandler(evt) {
     evt.preventDefault();
     const name = placeInput.value;
     const link = linkInput.value;
-    addCard (name, link);
-    closePopup(evt);
-
+    addCard(name, link);
+    closePopup(formNewPlace.closest('.popup'));
 }
 
 function deleteItem(evt) {
-    evt.target.closest('.elements__item').remove(); 
+    evt.target.closest('.elements__item').remove();
 }
 
 function likeHandler(evt) {
@@ -109,18 +108,24 @@ function likeHandler(evt) {
     }
 }
 
- function showPopupPhoto(evt) {
+function showPopupPhoto(evt) {
     openPopup(popupPhoto);
-    document.querySelector('.popup__image').src = evt.target.src;
-    document.querySelector('.popup__text').textContent = evt.target.closest('.elements__item').querySelector('.elements__text').textContent;
- }
+    popupImage.src = evt.target.src;
+    popupText.textContent = evt.target.closest('.elements__item').querySelector('.elements__text').textContent;
+}
 
-addListener (whiteLikes, likeHandler);
-addListener (deleteButtons, deleteItem);
-addListener (photoItems, showPopupPhoto);
-addListener (closeButtons, closePopup);
+function addListener(array, functionToAdd) {
+    for (let i = 0; i < array.length; i++) {
+        array[i].addEventListener('click', functionToAdd);
+    }
+}
+
+addListener(whiteLikes, likeHandler);
+addListener(deleteButtons, deleteItem);
+addListener(photoItems, showPopupPhoto);
+addListener(closeButtons, passPopup);
 editButton.addEventListener("click", openPopupUser);
-formElement.addEventListener('submit', formSubmitHandler);
+formUserInfo.addEventListener('submit', userFormSubmitHandler);
 plusButton.addEventListener("click", () => openPopup(popupPlaces));
-formNewPlace.addEventListener('submit', placeSubmitHandler);
+formNewPlace.addEventListener('submit', placeFormSubmitHandler);
 
