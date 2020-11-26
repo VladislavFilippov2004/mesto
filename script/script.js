@@ -27,6 +27,7 @@ const initialCards = [
 
 const editButton = document.querySelector('.profile__edit-button');
 const popupUserInfo = document.querySelector('.popup-user-info');
+const formList = document.querySelectorAll('.popup__form');
 const closeButtons = document.querySelectorAll('.popup__icon-close');
 const formUserInfo = document.querySelector('.popup__form_user-info');
 const formNewPlace = document.querySelector('.popup__form_new-place');
@@ -63,6 +64,18 @@ function addCard(name, link) {
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', function(evt){
+    if (evt.key === 'Escape') {
+        closePopup(popup);
+    } 
+    });
+    popup.addEventListener('mousedown', function(){
+        closePopup(popup); 
+    });
+}
+
+function stopPropagation(evt) {
+    evt.stopPropagation();
 }
 
 function openPopupUser() {
@@ -73,6 +86,7 @@ function openPopupUser() {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener
 }
 
 function passPopup(evt) {
@@ -122,4 +136,7 @@ editButton.addEventListener("click", openPopupUser);
 formUserInfo.addEventListener('submit', userFormSubmitHandler);
 plusButton.addEventListener("click", () => openPopup(popupPlaces));
 formNewPlace.addEventListener('submit', placeFormSubmitHandler);
-
+formList.forEach(function (form) {
+    form.addEventListener('click', stopPropagation);
+    form.addEventListener('mousedown', stopPropagation);
+})

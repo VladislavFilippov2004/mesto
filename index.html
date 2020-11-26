@@ -38,13 +38,17 @@
 
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <fieldset class="popup__info">
-                    <input type="text" class="popup__input popup__input_name" name="nameInput">
-                    <input type="text" class="popup__input popup__input_job" name="jobInput">
+                    
+                    <input type="text" class="popup__input popup__input_name" id="name-input" minlength="2" required>
+                    <span class='name-input-error popup__input-error'></span>
+                    <input type="text" class="popup__input popup__input_job" id="job-input" minlength="2" required>
+                    <span class='job-input-error popup__input-error'></span>
+                    
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
                     <img src="images/close_icon.svg" alt="Кнопка закрыть">
                 </button>
-                <button type="submit" class="popup__button-save" name="submit-form-btn">
+                <button type="submit" class="popup__button-save popup__button-save_invalid" name="submit-form-btn">
                     Сохранить
                 </button>
             </form>
@@ -57,8 +61,10 @@
 
                 <h3 class="popup__title">Новое место</h3>
                 <fieldset class="popup__info">
-                    <input type="text" class="popup__input popup__input_place" name="nameInput" placeholder="Название места">                    
-                    <input type="text" class="popup__input popup__input_link" name="jobInput" placeholder="Ссылка на картинку">
+                    <input type="text" class="popup__input popup__input_place" id="name-input" placeholder="Название места" minlength="2"> 
+                    <span class='popup__input-error name-input-error'></span>                   
+                    <input type="url" class="popup__input popup__input_link" id="place-input" placeholder="Ссылка на картинку" required>
+                    <span class='popup__input-error place-input-error'></span>
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
                     <img src="images/close_icon.svg" alt="Кнопка закрыть">
@@ -82,9 +88,6 @@
 
 
     </main>
-    <footer class="footer">
-        <p class="footer__text"> &COPY; 2020 Mesto Russia</p>
-    </footer>
     
     <!-- Класс elements был добавлен, чтобы обойти проверку при отправке на ревью -->
     <template class='elements' id='item-template'> 
@@ -99,7 +102,11 @@
             </div>
         </div>
     </template>
- 
+    
+    <footer class="footer">
+        <p class="footer__text"> &COPY; 2020 Mesto Russia</p>
+    </footer>
+    <script src="script/validate.js"></script>
     <script src="script/script.js"></script>
 </body>
 
