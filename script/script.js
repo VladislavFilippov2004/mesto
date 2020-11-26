@@ -86,7 +86,7 @@ function openPopupUser() {
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
-    document.removeEventListener
+
 }
 
 function passPopup(evt) {
@@ -106,6 +106,8 @@ function placeFormSubmitHandler(evt) {
     const link = linkInput.value;
     addCard(name, link);
     closePopup(formNewPlace.closest('.popup'));
+    placeInput.value = '';
+    linkInput.value = '';
 }
 
 function deleteItem(evt) {
