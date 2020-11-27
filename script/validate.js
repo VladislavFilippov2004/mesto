@@ -19,7 +19,6 @@ function checkValidation(form, input, config) {
 }
 
 function setButtonState(button, isActive, config) {
-    console.log(isActive);
     if (isActive) {
         button.classList.remove(config.buttonInvalid);
         button.disabled = false;
@@ -30,9 +29,9 @@ function setButtonState(button, isActive, config) {
 }
 
 function setEventListener (form, config) {
-    const InputList = form.querySelectorAll(config.inputSelector);
+    const inputList = form.querySelectorAll(config.inputSelector);
     const submitButton = form.querySelector(config.buttonSelector);
-    InputList.forEach((input) => {
+    inputList.forEach((input) => {
         input.addEventListener('input', () => {
             checkValidation(form, input, config);
             setButtonState(submitButton, form.checkValidity(), config);

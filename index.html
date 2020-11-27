@@ -34,7 +34,7 @@
 
         <div class="popup popup-user-info">
 
-            <form class="popup__form popup__form_user-info" method="GET" name="submit-form-btn">
+            <form class="popup__form popup__form_user-info" method="GET" name="edit-form">
 
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <fieldset class="popup__info">
@@ -57,19 +57,19 @@
 
         <div class="popup popup-new-place">
 
-            <form class="popup__form popup__form_new-place" method="GET" name="submit-form-btn">
+            <form class="popup__form popup__form_new-place" method="GET" name="place-form">
 
                 <h3 class="popup__title">Новое место</h3>
                 <fieldset class="popup__info">
-                    <input type="text" class="popup__input popup__input_place" id="place-input" placeholder="Название места" minlength="2" required> 
+                    <input type="text" class="popup__input popup__input_place" id="place-input" placeholder="Название места" minlength="2"> 
                     <span class='popup__input-error place-input-error'></span>                   
-                    <input type="url" class="popup__input popup__input_link" id="link-input" placeholder="Ссылка на картинку" required>
+                    <input type="url" class="popup__input popup__input_link" id="link-input" placeholder="Ссылка на картинку">
                     <span class='popup__input-error link-input-error'></span>
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
                     <img src="images/close_icon.svg" alt="Кнопка закрыть">
                 </button>
-                <button type="submit" class="popup__button-save" name="submit-form-btn">
+                <button type="submit" class="popup__button-save" name="make-form-btn">
                     Создать
                 </button>
             </form>
