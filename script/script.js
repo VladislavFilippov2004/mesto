@@ -44,13 +44,14 @@ const itemTemplateContent = document.querySelector('#item-template').content;
 const popupImage = document.querySelector('.popup__image');
 const popupText = document.querySelector('.popup__text');
 const popups = document.querySelectorAll('.popup');
+const element =  document.querySelector('.elements');
 
 initialCards.forEach(function (item) {
     createCard(item.name, item.link);
 });
 
 function addCard(item) { 
-    document.querySelector('.elements').prepend(item);
+   element.prepend(item);
 }
 
 function createCard (name, link) {
@@ -76,6 +77,7 @@ function closeByEscape(evt) {
     if (evt.key === 'Escape') {
         const openedPopup = document.querySelector('.popup_opened')
         closePopup(openedPopup);
+        enableValidation(validationConfig);
     } 
 }
 
@@ -88,6 +90,12 @@ function openPopupUser() {
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', closeByEscape);
+     if (popup.classList.contains('popup-new-place')){
+        placeInput.value = '';
+        linkInput.value = '';
+        enableValidation(validationConfig);
+     }
+    
 }
 
 function passPopup(evt) {
@@ -107,8 +115,9 @@ function placeFormSubmitHandler(evt) {
     const link = linkInput.value;
     createCard(name, link);
     closePopup(popupPlaces);
-    placeInput.value = '';
-    linkInput.value = '';
+    // placeInput.value = '';
+    // linkInput.value = '';
+
 }
 
 function deleteItem(evt) {

@@ -1,0 +1,6 @@
+.popup__span-error {
+    display: flex;
+    color: red;
+    font-size: 12px;
+    height: 25px;
+}

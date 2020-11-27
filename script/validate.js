@@ -2,12 +2,14 @@ function showError(form, input, config) {
     const error = form.querySelector(`.${input.id}-error`);
     error.textContent = input.validationMessage;
     input.classList.add(config.inputInvalid);
+    error.classList.add(config.spanInvalid);
 }
 
 function hideError(form, input, config) {
     const error = form.querySelector(`.${input.id}-error`);
     error.textContent = '';
     input.classList.remove(config.inputInvalid);
+    error.classList.remove(config.spanInvalid);
 }
 
 function checkValidation(form, input, config) {
@@ -53,8 +55,9 @@ const validationConfig =  {
     buttonSelector:'.popup__button-save',
     inputSelector:'.popup__input',
     buttonInvalid:'popup__button-save_invalid',
-    inputInvalid:'popup__input-error'
-    
+    spanInvalid:'popup__span-error',
+    inputInvalid: 'popup__input-error'
 }
 
 enableValidation(validationConfig);
+
