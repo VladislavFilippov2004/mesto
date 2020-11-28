@@ -81,11 +81,11 @@ function closeByEscape(evt) {
     if (evt.key === 'Escape') { 
         const openedPopup = document.querySelector('.popup_opened') 
         closePopup(openedPopup); 
-        clearInputs(openedPopup);
     }  
 } 
  
 function openPopupUser() { 
+    clearInputs(popupUserInfo);
     nameInput.value = profileTitle.textContent; 
     jobInput.value = profileSubtitle.textContent; 
     openPopup(popupUserInfo); 
@@ -111,8 +111,6 @@ function checkButton(popup) {
 }
  
 function closePopup(popup) { 
-    clearInputs(popup);
-    checkButton(popup);
     popup.classList.remove('popup_opened'); 
     document.removeEventListener('keydown', closeByEscape); 
      
@@ -134,10 +132,7 @@ function placeFormSubmitHandler(evt) {
     const name = placeInput.value; 
     const link = linkInput.value; 
     addCard(name, link); 
-    closePopup(popupPlaces); 
-    clearInputs(popupPlaces);
-    checkButton(popupPlaces);
- 
+    closePopup(popupPlaces);  
 } 
  
 function deleteItem(evt) { 
@@ -167,7 +162,12 @@ closeButtons.forEach(function (item) {
  
 editButton.addEventListener("click", openPopupUser); 
 formUserInfo.addEventListener('submit', userFormSubmitHandler); 
-plusButton.addEventListener("click", () => openPopup(popupPlaces)); 
+plusButton.addEventListener("click", () => {
+    clearInputs(popupPlaces);
+    checkButton(popupPlaces);
+    openPopup(popupPlaces); 
+});
+
 formNewPlace.addEventListener('submit', placeFormSubmitHandler); 
 popups.forEach((popup) => { 
     popup.addEventListener('click', (evt) => { 
