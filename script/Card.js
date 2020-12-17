@@ -1,5 +1,5 @@
-import {openImagePopup} from './script.js';
-export default class Card {
+import {openImagePopup} from './script.js'
+export class Card {
     constructor(data, cardSelector, openImagePopup) {
         this._text = data.name;
         this._image = data.link;
@@ -47,11 +47,7 @@ export default class Card {
     }
     
 }
-// _createCard(data, cardSelector, openImagePopup) {
-//     const card = new Card(data, cardSelector, openImagePopup);
-//     const newCard = card.generateCard();
-//     return newCard;
-// }
+
 
 
 

@@ -1,4 +1,4 @@
-import Card from './card.js';
+import {Card} from './card.js';
 import {initialCards} from './initial.js';
 import FormValidator from './FormValidator.js';
 
@@ -32,8 +32,14 @@ export const popupText = document.querySelector('.popup__text');
 export const popups = document.querySelectorAll('.popup');
 export const element = document.querySelector('.elements');
 
+export function openImagePopup(name, link) {
+    popupText.textContent = name;
+    popupImage.src = link;
+    openPopup(popupPhoto);
+}
+
 initialCards.forEach((item) =>{
-    const card = new Card(item, '.elements', openImagePopup());
+    const card = new Card(item, '.elements', openImagePopup);
     const cardElement = card.generateCard();
     element.prepend(cardElement);
 });
@@ -41,7 +47,7 @@ initialCards.forEach((item) =>{
 const addCard = () => {
     const nameCard = placeInput.value;
     const linkCard = linkInput.value;
-    const card = new Card ({name: nameCard, link: linkCard}, '.elements', openImagePopup());
+    const card = new Card ({name: nameCard, link: linkCard}, '.elements', openImagePopup);
     const cardElement = card.generateCard();
     element.prepend(cardElement);
 }
@@ -53,11 +59,6 @@ function closeByEscape(evt) {
     }
 }
 
-export function openImagePopup(name, link) {
-    popupText.textContent = name;
-    popupImage.src = link;
-    openPopup(popupPhoto);
-}
 
 export function openPopup(popup) {
     popup.classList.add('popup_opened');
@@ -111,7 +112,7 @@ function placeFormSubmitHandler(evt) {
     evt.preventDefault();
     const name = placeInput.value;
     const link = linkInput.value;
-    addCard(name, link, '.elements', openImagePopup());
+    addCard(name, link, '.elements', openImagePopup);
     closePopup(popupPlaces);
 }
 
