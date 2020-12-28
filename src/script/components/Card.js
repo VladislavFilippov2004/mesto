@@ -1,10 +1,11 @@
-import {openImagePopup} from './script.js'
+
 export class Card {
-    constructor(data, cardSelector, openImagePopup) {
+    constructor(data, cardSelector, handleCardClick) {
         this._text = data.name;
         this._image = data.link;
         this._cardSelector = cardSelector;
-        this._openImagePopup = openImagePopup;
+        this._handleCardClick = handleCardClick;
+        this._handleCardClickHandler = this._handleCardClickHandler.bind(this);
     }
     _getTemplate() {
         const cardElement = document
@@ -21,6 +22,7 @@ export class Card {
         this._element.querySelector('.elements__text').textContent = this._text;
         return this._element;
     }
+
     _deleteItem() {
         this._element.remove();
     }
@@ -33,6 +35,9 @@ export class Card {
             this._element.querySelector('.elements__like-picture').setAttribute('src', 'images/icon_like.svg');
         }
     }
+    _handleCardClickHandler(name, link) {
+        this._handleCardClick(name, link);
+    }
     
     _setEventListeners() {
         this._element.querySelector('.elements__trash').addEventListener('click', () => {
@@ -42,8 +47,9 @@ export class Card {
             this._likeHandler();
         });
         this._element.querySelector('.elements__image').addEventListener('click', () => {
-            openImagePopup(this._text, this._image);
-        })
+            this._handleCardClickHandler(this._text, this._image);
+        });
+
     }
     
 }

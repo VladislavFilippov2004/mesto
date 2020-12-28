@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link rel="stylesheet" href="pages/index.css">
+    <!-- <link rel="stylesheet" href="pages/index.css"> -->
 
 </head>
 
@@ -39,9 +39,9 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <fieldset class="popup__info">
                     
-                    <input type="text" class="popup__input popup__input_name" id="name-input" minlength="2" required>
+                    <input type="text" class="popup__input popup__input_name" id="name-input" name="input-user-name" minlength="2" required>
                     <span style class='name-input-error  popup__span-error'></span>
-                    <input type="text" class="popup__input popup__input_job " id="job-input" minlength="2" required>
+                    <input type="text" class="popup__input popup__input_job " id="job-input" name='input-user-job' minlength="2" required>
                     <span class='job-input-error popup__span-error'></span>
                     
                 </fieldset>
@@ -61,15 +61,15 @@
 
                 <h3 class="popup__title">Новое место</h3>
                 <fieldset class="popup__info">
-                    <input type="text" class="popup__input popup__input_place " id="place-input" placeholder="Название места" minlength="2" required> 
+                    <input type="text" class="popup__input popup__input_place " id="place-input" name='name' placeholder="Название места" minlength="2" required> 
                     <span class='place-input-error popup__span-error'></span>                   
-                    <input type="url" class="popup__input popup__input_link" id="link-input" placeholder="Ссылка на картинку" required>
+                    <input type="url" class="popup__input popup__input_link" id="link-input" name='link'  placeholder="Ссылка на картинку" required>
                     <span class='link-input-error popup__span-error'></span>
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
                     <img src="images/close_icon.svg" alt="Кнопка закрыть">
                 </button>
-                <button type="submit" class="popup__button-save" name="make-form-btn">
+                <button type="submit" class="popup__button-save popup__button-save_form" name="make-form-btn">
                     Создать
                 </button>
             </form>
@@ -107,7 +107,7 @@
     <footer class="footer">
         <p class="footer__text"> &COPY; 2020 Mesto Russia</p>
     </footer>
-    <script src="script/script.js" type="module"></script>
+    <!-- <script src="script/script.js" type="module"></script> -->
 </body>
 
 </html>
