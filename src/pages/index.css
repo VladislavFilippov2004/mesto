@@ -36,6 +36,8 @@
 @import url(../blocks/elements/__image/elements__image.css);
 @import url(../blocks/elements/__under-picture/elements__under-picture.css);
 @import url(../blocks/elements/__like/elements__like.css);
+@import url(../blocks/elements/__like/_white/elements__like_white.css);
+@import url(../blocks/elements/__like/_black/elements__like_black.css);
 @import url(../blocks/elements/__text/elements__text.css);
 @import url(../blocks/elements/__trash/elements__trash.css);
 

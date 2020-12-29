@@ -39,27 +39,20 @@ function createCard(item) {
 }
 
 
-const addInitial = new Section({
+const cardList = new Section({
     massive: initialCards,
     renderer: (item) => {
         const cardElement = createCard(item);
-        addInitial.addItem(cardElement);
+        cardList.addItem(cardElement);
     }
 }, element);
-addInitial.renderItems();
+cardList.renderItems();
 
 
 function handlePlaceFormSubmit(data) {
-    const objCard = [data];
-    const addCard = new Section({
-        massive: objCard,
-        renderer: (item) => {
-            const newCard = createCard(item);
-            addCard.addItem(newCard);
-        }
-    }, element);
-    addCard.renderItems();
-PopupWithFormCopy.close();
+    const newCard = createCard(data);
+    cardList.addItem(newCard);
+    popupWithFormCopy.close();
 }
 
 const popupEditUser = new PopupWithForm(popupUserInfo, handleUserFormSubmit)
@@ -79,9 +72,9 @@ function handleUserFormSubmit(data) {
 }
 
 
-const PopupWithFormCopy = new PopupWithForm(popupPlaces, handlePlaceFormSubmit)
-PopupWithFormCopy.setEventListeners();
-plusButton.addEventListener('click', () => {PopupWithFormCopy.open(); addFormValidator.checkButton()});
+const popupWithFormCopy = new PopupWithForm(popupPlaces, handlePlaceFormSubmit)
+popupWithFormCopy.setEventListeners();
+plusButton.addEventListener('click', () => { popupWithFormCopy.open(); addFormValidator.checkButton() });
 buttonFormPlace.addEventListener('click', () => handlePlaceFormSubmit);
 
 editButton.addEventListener("click", () => openUserPopup());

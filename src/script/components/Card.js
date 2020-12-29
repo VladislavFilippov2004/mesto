@@ -1,4 +1,3 @@
-
 export class Card {
     constructor(data, cardSelector, handleCardClick) {
         this._text = data.name;
@@ -27,23 +26,29 @@ export class Card {
         this._element.remove();
     }
     _likeHandler() {
-        const checkSrc = this._element.querySelector('.elements__like-picture').getAttribute('src');
-        if (checkSrc === 'images/icon_like.svg') {
-            this._element.querySelector('.elements__like-picture').setAttribute('src', 'images/black-like.svg');
+        const btn = this._element.querySelector('.elements__like');
+        const checkSrc = btn.classList.contains('elements__like_white');
+
+        if (checkSrc) {
+            btn.classList.remove('elements__like_white');
+            btn.classList.add('elements__like_black');
+
         }
         else {
-            this._element.querySelector('.elements__like-picture').setAttribute('src', 'images/icon_like.svg');
+            btn.classList.remove('elements__like_black');
+            btn.classList.add('elements__like_white');
         }
     }
+
     _handleCardClickHandler(name, link) {
         this._handleCardClick(name, link);
     }
-    
+
     _setEventListeners() {
         this._element.querySelector('.elements__trash').addEventListener('click', () => {
             this._deleteItem();
         });
-        this._element.querySelector('.elements__like-picture').addEventListener('click', () => {
+        this._element.querySelector('.elements__like').addEventListener('click', () => {
             this._likeHandler();
         });
         this._element.querySelector('.elements__image').addEventListener('click', () => {
@@ -51,7 +56,7 @@ export class Card {
         });
 
     }
-    
+
 }
 
 
