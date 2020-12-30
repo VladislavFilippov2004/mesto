@@ -7,10 +7,6 @@ export class PopupWithForm extends Popup {
         this._submitFormHandler = submitFormHandler;
     }
 
-    open() {
-        super.open();
-    };
-
     close() {
         super.close();
         this._form.reset();

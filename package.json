@@ -2,7 +2,7 @@
   "name": "mesto",
   "version": "1.0.0",
   "description": "Этот учебный проект - интерактивная страница. В проекте мы применяли знания, полученные во время прохождения 4-ого и 3-ого спринтов: Javascript, грид, адаптивность.",
-  "main": "script.js",
+  "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve"

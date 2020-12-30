@@ -1,4 +1,5 @@
-export {initialCards, validationConfig};
+export {initialCards, validationConfig, editButton, popupUserInfo, popupPlaces, formUserInfo, formNewPlace, nameOnSite, jobOnSite, plusButton,
+  element, popupPhoto, nameInput, jobInput};
 
     const initialCards = [
         {
@@ -36,3 +37,16 @@ const validationConfig = {
     inputInvalid: 'popup__input-error',
     plusButton: 'profile__button-add',
 };
+
+const editButton = document.querySelector('.profile__edit-button');
+const popupUserInfo = document.querySelector('.popup-user-info');
+const popupPlaces = document.querySelector('.popup-new-place');
+const formUserInfo = document.querySelector('.popup__form_user-info');
+const formNewPlace = document.querySelector('.popup__form_new-place');
+const nameOnSite = document.querySelector('.profile__name');
+const jobOnSite = document.querySelector('.profile__job');
+const plusButton = document.querySelector('.profile__button-add');
+const element = document.querySelector('.elements');
+const popupPhoto = document.querySelector('.popup_photo');
+const nameInput = document.querySelector('.popup__input_name');
+const jobInput = document.querySelector('.popup__input_job');
