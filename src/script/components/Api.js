@@ -125,7 +125,7 @@ export class Api {
   }
 
   deleteCard(id) {
-    return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+    return fetch(`${this._baseUrl}/cards/${id}`, {
       method:'DELETE',
       headers: {
         authorization: this._autorization

@@ -1,6 +1,6 @@
 
 export class Card {
-    constructor(data, cardSelector, userId, handleCardClick, { handleLikeClick, handleDeleteClick}) {
+    constructor(data, cardSelector, userId, { handleCardClick, handleLikeClick, handleDeleteClick}) {
         this._text = data.name;
         this._image = data.link;
         this._id = data._id;
@@ -10,7 +10,7 @@ export class Card {
         this._cardSelector = cardSelector;
         this._userId = userId;
         this._handleCardClick = handleCardClick;
-        this._handleDeleteClick = () => handleDeleteClick()
+        this._handleDeleteClick = () => handleDeleteClick(this._id)
         this._handleLikeClick = () => handleLikeClick(this._id, this._isLiked())
         this._handleCardClickHandler = this._handleCardClickHandler.bind(this);
 
@@ -34,13 +34,12 @@ export class Card {
     }
     
     setLikes(likesArray) {
-        const likeElement = this._element.querySelector('.elements__like')
         this._likes = likesArray;
         this._element.querySelector('.elements__like-counter').textContent = likesArray.length;
         if (this._cardLikedByThisUser()) {
-            likeElement.classList.add('elements__like_black');
+            this._likeElement.classList.add('elements__like_black');
         } else {
-            likeElement.classList.remove('elements__like_black')
+            this._likeElement.classList.remove('elements__like_black')
         }
         
     }
@@ -49,8 +48,9 @@ export class Card {
     }
     
     removeCard() {
+        // console.log(this._element)
         this._element.remove()
-    }
+        }
 
     _getTemplate() {
         const cardElement = document
@@ -68,6 +68,8 @@ export class Card {
     generateCard() {
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector('.elements__image');
+        this._likeElement = this._element.querySelector('.elements__like');
+        this._deleteElement = this._element.querySelector('.elements__trash');
         this._element.querySelector('.elements__text').textContent = this._text;
         this._cardImage.src = this._image;
         this._cardImage.alt = this._text;
@@ -75,7 +77,7 @@ export class Card {
         this._element.querySelector('.elements__like-counter').textContent = this._likes.length;
         this._setEventListeners();
         if(this._userId !== this._ownerid) {
-            this._element.querySelector('.elements__trash').style.display = 'none';
+            this._deleteElement.style.display = 'none';
         }
 
         return this._element;

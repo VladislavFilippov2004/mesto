@@ -44,9 +44,9 @@
                 <fieldset class="popup__info">
                     
                     <input type="text" class="popup__input popup__input_name" id="name-input" name="input-user-name" minlength="2" required>
-                    <span style class='name-input-error  popup__span-error'></span>
+                    <span style class='span-error name-input-error  popup__span-error'></span>
                     <input type="text" class="popup__input popup__input_job " id="job-input" name='input-user-job' minlength="2" required>
-                    <span class='job-input-error popup__span-error'></span>
+                    <span class='span-error job-input-error popup__span-error'></span>
                     
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
@@ -67,9 +67,9 @@
                 <h3 class="popup__title">Новое место</h3>
                 <fieldset class="popup__info">
                     <input type="text" class="popup__input popup__input_place " id="place-input" name='name' placeholder="Название места" minlength="2" required> 
-                    <span class='place-input-error popup__span-error'></span>                   
+                    <span class='span-error place-input-error popup__span-error'></span>                   
                     <input type="url" class="popup__input popup__input_link" id="link-input" name='link'  placeholder="Ссылка на картинку" required>
-                    <span class='link-input-error popup__span-error'></span>
+                    <span class='span-error link-input-error popup__span-error'></span>
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
                     <img src="<%=require('./images/close_icon.svg')%>" alt="Кнопка закрыть">
@@ -112,7 +112,7 @@
                 <h3 class="popup__title">Обновить аватар</h3>
                 <fieldset class="popup__info">
                     <input type="url" class="popup__input popup__input_link" id="link" name='link'  placeholder="Ссылка на картинку" required>
-                    <span class='link-error popup__span-error'></span>
+                    <span class='span-error link-error popup__span-error'></span>
                 </fieldset>
                 <button class="popup__icon-close" type="reset">
                     <img src="<%=require('./images/close_icon.svg')%>" alt="Кнопка закрыть">
@@ -128,7 +128,7 @@
     </main>
     
     <!-- Класс elements был добавлен, чтобы обойти проверку при отправке на ревью -->
-        <template class='elements' id='item-template'> 
+        <template class='elements elements__template' id='item-template'> 
             <div class="elements__item">
                 <img class="elements__image" src='#' alt='Увеличенная в размере картинка'>
                 <div class="elements__under-picture">

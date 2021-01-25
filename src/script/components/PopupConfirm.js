@@ -9,7 +9,8 @@ export class PopupConfirm extends Popup {
       }
       setEventListeners() {
           super.setEventListeners();
-          this._popup.querySelector('.popup__button-save').addEventListener('click', () => {
+          this._popup.querySelector('.popup__form').addEventListener('submit', (evt) => {
+            evt.preventDefault();
             this._handleSubmitCallback()
           })
       }
