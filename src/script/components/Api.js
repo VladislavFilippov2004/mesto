@@ -31,9 +31,7 @@ export class Api {
       })
     })
     .then(res => {
-      console.log(res)
       if (res.ok) {
-        console.log(res)
         return res.json()
       }
       return Promise.reject(`Ошибка: ${res.status}`)

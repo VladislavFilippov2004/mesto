@@ -135,7 +135,6 @@ function handlePlaceFormSubmit(data) {
 function handleAvatarFormSubmit(data) {
     api.changeAvatar(data)
     .then((res) => {
-        console.log(res)
         userInfo.setUserInfo(res.name, res.about, res.avatar)
         popupAvatarChanging.close()
     })

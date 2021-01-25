@@ -1,4 +1,4 @@
-.profile__pen_box {
+.profile__box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +11,7 @@
     opacity: 0;
 }
 
-.profile__pen_box:hover {
+.profile__box:hover {
     opacity: 1;
     transition: opacity 0.5s;
 }
